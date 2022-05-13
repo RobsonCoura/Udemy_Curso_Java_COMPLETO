@@ -1,22 +1,22 @@
-package br.com.principal.exercicio_de_arrays_listas;
+package br.com.principal.exercicio_de_arrays_listas_matrizes;
 
-public class Employee_Exercicio_01 {
+public class Employee_Ex01 {
 
-    //Atributos
+    //Attributes
     private Integer id;
     private String name;
     private Double salary;
 
-    //Construtor padrao sem argumentos()
-    public Employee_Exercicio_01(){
+    //Default constructor with no arguments()
+    public Employee_Ex01(){
     }
-    //Criação construtor com argumentos
-    public Employee_Exercicio_01(Integer id, String name, Double salary) {
+    //Constructor creation with arguments
+    public Employee_Ex01(Integer id, String name, Double salary) {
         this.id = id;
         this.name = name;
         this.salary = salary;
     }
-    //Gerando os Gets e Sets para pegar e recuperar os atributos meio de proteção
+    //Generating the Gets and Sets to get and recover the attributes means of protection
 
     public Integer getId() {
         return id;
@@ -41,9 +41,13 @@ public class Employee_Exercicio_01 {
     public void setSalary(Double salary) {
         this.salary = salary;
     }
-    //Metodo para aumentar o salario funcionario
+    //Method to increase employee salary
     public void increasesalary(double percentage){
-        //Operação para aumentar o salario do funcionario
         salary += salary * percentage / 100.0;
+    }
+    //Creating the toString method
+    public String toString()
+    {
+        return id + ", " + name + ", " + String.format("%.2f", salary);
     }
 }
