@@ -1,5 +1,7 @@
-package br.com.principal.enumeracoes_composicoes;
+package br.com.principal.enumeracoes_composicoes.entities;
 
+
+import br.com.principal.enumeracoes_composicoes.entities.enums.OrderStatus01;
 
 import java.util.Date;
 //Entidade
@@ -44,6 +46,7 @@ public class Order {
     public void setStatus01(OrderStatus01 status01) {
         this.status01 = status01;
     }
+
     //Gerar ToString
     @Override
     public String toString() {

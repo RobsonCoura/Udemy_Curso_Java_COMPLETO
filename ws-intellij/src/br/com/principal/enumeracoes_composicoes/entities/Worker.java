@@ -1,6 +1,11 @@
-package br.com.principal.enumeracoes_composicoes;
+package br.com.principal.enumeracoes_composicoes.entities;
+
+import br.com.principal.enumeracoes_composicoes.entities.Department;
+import br.com.principal.enumeracoes_composicoes.entities.HourContract;
+import br.com.principal.enumeracoes_composicoes.entities.enums.WorkerLevel;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Worker {
@@ -16,8 +21,9 @@ public class Worker {
     private List<HourContract> contracts = new ArrayList<>();
 
     //Contrutor padrao vazio
-    public Worker(){
+    public Worker() {
     }
+
     //Contrutor C/ Argumentos
     public Worker(String name, WorkerLevel level, double baseSalary, Department department) {
         this.name = name;
@@ -63,16 +69,30 @@ public class Worker {
         return contracts;
     }
 
-    public void setContracts(List<HourContract> contracts) {
-        this.contracts = contracts;
-    }
     //Metodo para add um contrato a esse trabalhador
-    public void addContract(HourContract contract){
+    public void addContract(HourContract contract) {
         contracts.add(contract);
     }
+
     //Metodo para remove um contrato a esse trabalhador
-    public void removeContract(HourContract contract){
+    public void removeContract(HourContract contract) {
         contracts.remove(contract);
     }
 
+    //Metodo para calcular quanto funcionario ganhou
+    public double income(int year, int month) {
+        double sum = baseSalary;
+        Calendar cal = Calendar.getInstance();
+        //Loop
+        for (HourContract c : contracts) {
+            cal.setTime(c.getDate());
+            int c_year = cal.get(Calendar.YEAR);
+            int c_month = 1 + cal.get(Calendar.MONTH);
+            //Condição
+            if (year == c_year && month == c_month) {
+                sum+= c.totalValue();
+            }
+        }
+        return sum;
+    }
 }

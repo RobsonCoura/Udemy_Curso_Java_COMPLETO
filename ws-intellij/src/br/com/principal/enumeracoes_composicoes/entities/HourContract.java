@@ -1,4 +1,4 @@
-package br.com.principal.enumeracoes_composicoes;
+package br.com.principal.enumeracoes_composicoes.entities;
 
 import java.util.Date;
 
@@ -12,9 +12,7 @@ public class HourContract {
     //Construtor padrao
     public HourContract(){
     }
-    // //Construtor C/ argumentos
-
-
+    //Construtor C/ argumentos
     public HourContract(Date date, Double valuePerhour, Integer hours) {
         this.date = date;
         this.valuePerhour = valuePerhour;
@@ -44,5 +42,9 @@ public class HourContract {
 
     public void setHours(Integer hours) {
         this.hours = hours;
+    }
+    //Metodo para dizer a quantidade de horas do contrato
+    public double totalValue(){
+        return valuePerhour * hours;
     }
 }

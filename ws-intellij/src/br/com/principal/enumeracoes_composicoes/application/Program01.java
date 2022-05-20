@@ -1,4 +1,7 @@
-package br.com.principal.enumeracoes_composicoes;
+package br.com.principal.enumeracoes_composicoes.application;
+
+import br.com.principal.enumeracoes_composicoes.entities.Order;
+import br.com.principal.enumeracoes_composicoes.entities.enums.OrderStatus01;
 
 import java.util.Date;
 

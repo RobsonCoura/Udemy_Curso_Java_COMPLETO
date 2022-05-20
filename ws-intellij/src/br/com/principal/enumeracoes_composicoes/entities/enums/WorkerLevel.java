@@ -1,4 +1,4 @@
-package br.com.principal.enumeracoes_composicoes;
+package br.com.principal.enumeracoes_composicoes.entities.enums;
 
 public enum WorkerLevel {
 
