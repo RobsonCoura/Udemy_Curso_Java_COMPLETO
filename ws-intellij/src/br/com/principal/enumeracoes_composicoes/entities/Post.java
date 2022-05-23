@@ -1,10 +1,14 @@
 package br.com.principal.enumeracoes_composicoes.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Post {
+
+    //Declarando uma constante
+    private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     //Atributos
     private Date moment;
@@ -69,5 +73,19 @@ public class Post {
     //Criação do metodo para deletar um comentario
     public void removeComment(Comment comment){
         comments.remove(comment);
+    }
+    //Criação do metodo ToString
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(title + "\n");
+        sb.append(likes);
+        sb.append(" Likes - ");
+        sb.append(sdf.format(moment) + "\n");
+        sb.append(content + "\n");
+        sb.append("Comments:\n");
+        for (Comment c : comments){
+            sb.append(c.getText() + "\n");
+        }
+        return  sb.toString();
     }
 }
